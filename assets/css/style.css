@@ -1,0 +1,715 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: #d1e1de;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 86%; 
+  margin: 0 auto;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+header {
+  padding: 20px 0;
+  background-color: #79aaad;
+}
+
+header .wrapper {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; 
+}
+
+h1 .logo {
+  color: #585858; 
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+h1 .logo::before{
+  content: "\f4ad";
+  font-family:"Font Awesome 5 Free";
+  float: right;
+  text-indent: 0;  
+}
+
+h1 span {
+  color: #fbf7f4;
+  font: bold 30px sans-serif;
+  text-transform: capitalize;
+}
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+/*=================================
+  index page styling starts here
+=================================*/
+.welcome { min-height: auto; } 
+.welcome h1 span { font-size: 80px; }
+.welcome ul { margin-top: 30px; }
+
+.box {
+  padding: 80px 8%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #79aaad;
+}
+
+.welcome .button {
+  padding: 15px 10%;
+  margin: 0 5%;
+  cursor: pointer;
+}
+
+.welcome li a {
+  color: #000;
+  text-transform: capitalize; 
+}
+/*=================================
+  index styling ends here
+=================================*/
+/*=================================
+  sign up page styling starts here
+=================================*/
+input, select { background-color: transparent; }
+.name li { width: 45%; }
+.gender { width: 35%; }
+.birthday { width: 55%; }
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-clear-button { display: none; }
+.photo img { width: 50%; }
+.right-form .select, .answer { margin-bottom: 25px; }
+.signUpForm .right-form ul { margin-bottom: 0px; }
+.right-form .button { margin: 25px 0; }
+form input:focus, select:focus { border-color: #585858; }
+.signInForm .error-msg { margin: 0px 0 30px; }
+
+.emailId, .phone, .password {  
+  -webkit-box-orient: vertical;  
+  -webkit-box-direction: normal;  
+  -ms-flex-direction: column;  
+  flex-direction: column; 
+}
+
+.signUpForm .photo { 
+  -webkit-box-pack: start; 
+  -ms-flex-pack: start; 
+  justify-content: flex-start; 
+}
+
+.right-form ul { 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -ms-flex-direction: column; 
+  flex-direction: column; 
+}
+
+.signUpForm form ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+input[type="date"] {
+  padding: 4px 0;
+  border: none;
+  border-bottom: 1px solid #87bdbc;
+  font-size: 15px;  
+  outline: none;
+}
+
+.upload-button {
+  margin-bottom: 15px;
+  position: relative; 
+  color: #d59a83;
+  overflow: hidden;  
+  text-align: center;
+  -webkit-transition: all .5s ease;  
+  -o-transition: all .5s ease;  
+  transition: all .5s ease; 
+}
+
+input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  display: block;
+  opacity: 0;  
+}
+
+.button {
+  padding: 10px 5%;
+  border: none;
+  border-radius: 25px;
+  background-color: #d59a83;
+  font: bold 15px sans-serif;
+  outline: none; 
+  -webkit-transition: all .5s ease; 
+  -o-transition: all .5s ease; 
+  transition: all .5s ease;
+}
+
+main {
+  min-height: 100vh;
+  padding: 25px 0;
+  text-align: center; 
+}
+
+.error {
+  margin: 20px 0 5px;
+  color: #e9594d;
+  font-size: small;
+  text-align: start;
+  text-transform: capitalize;
+}
+
+h2 {
+  color: #585858;
+  font: bold 30px cursive;
+  text-transform: capitalize; 
+}
+
+.signUpForm, .signInForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.signUpForm form {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;  
+  -webkit-box-pack: justify;  
+  -ms-flex-pack: justify;  
+  justify-content: space-between;
+}
+
+form {
+  padding: 30px 5%;
+  margin: 20px 0;
+  background-color: #e9eeea; 
+}
+
+.signUpForm form ul, .emailId, .phone, .password {
+  margin-bottom: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: start;
+}
+
+form label {
+  margin-bottom: 5px;
+  font: bold 15px 'Arial';
+  text-transform: capitalize; 
+}
+
+input[type="text"], input[type="password"] {
+  padding: 5px 0%;
+  border: none;
+  border-bottom: 1px solid #87bdbc;
+  font-size: 15px;
+  outline: none;
+}
+
+select {
+  padding: 4px 0%;
+  border: none;
+  border-bottom: 1px solid #87bdbc;
+  font-size: 15px;
+  outline: none;
+  text-transform: capitalize; 
+}
+
+button {
+  padding: 10px 0;
+  border: 1px solid #8de8e4;
+  background-color: #8de8e4;
+  font-weight: bold;
+  outline: none;
+  text-transform: capitalize;  
+  -webkit-transition: all .5s ease;  
+  -o-transition: all .5s ease;  
+  transition: all .5s ease;
+}
+/*=================================
+  sign up page styling ends here
+=================================*/  
+/*=================================
+  sign in page styling starts here
+=================================*/  
+.login p::first-letter, .login a { text-transform: capitalize; }
+.password { position: relative; }
+input[type="checkbox"] { margin: 0; }
+
+.show::before {
+  content: "\f070";
+  position: absolute;
+  top: 25px;
+  right: 3%;
+  cursor: pointer;
+  font-family: "Font Awesome 5 Free";
+  text-indent: 0; 
+}
+
+.show {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.signInForm form { 
+  width: 30%; 
+  padding: 50px 5%;
+}
+
+.signInForm ul {
+  margin-bottom: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; 
+}
+
+.remember label {
+  color: #585858;
+  font: normal small 'Arial';
+}
+
+.forgot {
+  margin-bottom: 20px;
+  font-size: 13px;
+  text-align: start;
+  text-transform: capitalize;  
+}
+
+.forgot a {
+  color: #e9594d;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.forgotPassword .notify {
+  padding: 35px;
+  border: 1px solid #8de8e4;
+  border-radius: 3px;
+  margin-bottom: 20px; 
+  background-color: #fbf7f4;
+}
+
+.hide::before { content: "\f06e"; }
+/*=================================
+  sign in page styling ends here
+=================================*/  
+
+/*=================================
+  home page styling starts here
+=================================*/
+section { margin-top: 20px; }
+.left-chat-list figure { width: 20%; }
+.left-chat-list ul li:not(:last-of-type) { border-bottom: 1px solid #9bc1c0; }
+.chat-left-details { margin-left: 20px; }
+.chat-left-details .offline { color: #d59a83; }
+.scroll::-webkit-scrollbar { width: 7px; }
+.scroll::-webkit-scrollbar-thumb { background-color: #9bc1c0; }
+.right-chat { width: 65%; }
+.chat-left-details p:nth-of-type(2) { text-align: start; }
+.sender, .receiver { width: 100%; }
+.rightside-chat { width: 40%; }
+.sender .rightside-chat { margin: 0 58%; }
+.receiver .rightside-chat { margin: 0 2%; }
+.right-header-contentchat ul { margin: 15px 0;}
+.right-chat-textbox { margin-top: 20px; }
+.left-chat { width: 30%; }
+.right-header img { background: #585858 }
+.current_profile figure { margin: 30px 0; }
+
+.chat-left-details .online { 
+  color: #7ebe6d; 
+  font-weight: bold;
+}
+
+.right-chat-textbox form { 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: flex; 
+}
+
+.right-header figure { 
+  width: 7%; 
+  margin-right: 2%;
+}
+
+.right-chat-textbox form div:first-of-type { 
+  width: 95%;
+  text-align: start;
+}
+
+section .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.left-chat form {
+  padding: 10px;
+  margin: 0 0 16px;
+  background-color: #e9eeea; 
+}
+
+.left-chat input {
+  width: 100%;
+  border: none;
+  font-size: 15px;
+  outline: none;
+}
+
+.left-chat-list {
+  height: 500px;
+  padding-top: 5px;
+  background-color: #fbf7f4;
+  overflow-y: scroll;
+}
+
+.left-chat-list ul {
+  margin-left: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.left-chat-list ul li {
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.left-chat-list ul li a {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;  
+}
+
+.chat-left-details .name { 
+  color: #585858;
+  font: bold 15px cursive;
+  text-transform: capitalize;  
+}
+
+.chat-left-details .status {
+  font-size: small; 
+  text-transform: uppercase;  
+}
+
+.right-header {
+  padding: 10px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #9bc1c0; 
+}
+
+.right-header-detail p {
+  color: #585858;
+  font-weight: bold;
+  text-transform: capitalize;  
+}
+
+.right-header-detail span {
+  color: #fbf7f4;
+  font-size: small; 
+}
+
+.rightside-chat span {
+  display: block;
+  color: #9bc1c0;
+  font-size: small;
+  text-align: end;
+}
+
+.sender .rightside-chat p {
+  background: #d59a83;
+  padding: 10px 5%;
+  border-radius: 10px 10px 0px 10px;
+  text-align: start;
+  word-break: break-word;
+}
+
+.receiver .rightside-chat p {
+  background: #ebc8b9;
+  padding: 10px 5%;
+  border-radius: 10px 10px 10px 0px;
+  text-align: start;
+  word-break: break-word;
+}
+
+.right-header-contentchat {
+  background-color: #fbf7f4;
+  overflow-y: scroll;
+  height: 440px;
+}
+
+.right-chat-textbox input[type="text"] {
+  width: 95%;
+  padding: 10px 2%;
+  border: none;
+  background-color: #fbf7f4;
+  font-size: 15px;
+  outline: none; 
+}
+
+.sendButton input[type="submit"] { 
+  padding: 11px 20%;
+  border: none;
+}
+
+.blue-button {
+  padding: 5px 10%;
+  border: 1px solid #8de8e4;
+  background-color: #8de8e4; 
+  outline: none;
+  -webkit-transition: all .5s ease; 
+  -o-transition: all .5s ease; 
+  transition: all .5s ease;
+}
+
+.sign-out-form, .right-chat-textbox form {
+  padding: 0;
+  margin: 0;
+  background: none; 
+}
+
+.current_profile {
+  padding: 50px 0;
+  background-color: #79aaad;
+  text-transform: capitalize;
+}
+
+.current_profile span {
+  margin-top: 25px;
+  display: block;
+  color: #585858;
+  font: bold 50px serif; 
+}
+
+.current_profile h2 {
+  color: #fbf7f4;
+  font: bold 60px sans-serif;
+  text-transform: capitalize;
+}
+
+.current_profile img {
+  width: 25%;
+  border: 1px solid #585858;  
+  margin: 0 auto;
+}
+
+.current_profile div {
+  margin-bottom: 25px;
+  font: bold 35px serif;
+  color: #e9eeea;
+}
+/*=================================
+  home page styling ends here
+=================================*/
+/*=================================
+  settings page styling starts here
+=================================*/
+.settingsForm form {
+  width: 30%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; 
+}
+/*=================================
+  settings page styling ends here
+=================================*/
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+footer {
+  padding: 20px 0;
+  background-color: #79aaad;
+  text-align: center;
+}
+
+h3 {
+  color: #fbf7f4;
+  font: bold 15px sans-serif; 
+}
+
+h3 a {
+  color: #585858;
+  text-transform: capitalize;  
+  -webkit-transition: all .5s ease;  
+  -o-transition: all .5s ease;  
+  transition: all .5s ease;
+}
+ /*=================================
+  footer styling ends here
+=================================*/ 
+
+/*media query starts*/
+/*media query for 1024px starts here*/
+@media only screen and (min-width: 1024px) {
+  header ul li a:hover { color: #585858; }
+  h3 a:hover { color: #000; }
+  button:hover { border: 1px solid #95bcbd; }
+  .sign-out-form input[type="submit"]:hover { border: 1px solid #95bcbd; }
+  .left-chat-list ul li:hover { background: #e9eeea; }  
+  .upload-button:hover { color: #e9594d; }
+  .button:hover { background-color: #e9594d; }
+  .forgot a:hover { color: #585858; }
+}  
